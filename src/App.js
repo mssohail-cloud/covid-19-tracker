@@ -6,6 +6,7 @@ import './App.css';
 import Map from './Components/Map';
 import CountriesTable from './Components/CountriesTable';
 import { SortData } from './SortFunc';
+import LineChart from './Components/LineChart';
 
 function App() {
 
@@ -106,6 +107,8 @@ function App() {
           <h2>Live cases from countries</h2>
           <CountriesTable countries={tableData}/>
           <h2>Wordwide new cases</h2>
+
+          <LineChart />
         </CardContent>
 
       </Card>
