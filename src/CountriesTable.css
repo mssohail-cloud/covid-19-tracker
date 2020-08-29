@@ -1,0 +1,20 @@
+.countriesTable {
+    margin-top: 20px;
+    overflow: scroll;
+    height: 400px;
+    color: gray;
+}
+
+.countriesTable tr{
+    display: flex;
+    justify-content: space-between;
+}
+
+.countriesTable td {
+    padding: 0.5rem;
+}
+
+
+.countriesTable tr:nth-of-type(odd){
+    background-color: #f3f2f8;
+}

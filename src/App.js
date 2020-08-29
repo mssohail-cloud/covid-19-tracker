@@ -4,6 +4,8 @@ import InfoBox from './Components/InfoBox';
 
 import './App.css';
 import Map from './Components/Map';
+import CountriesTable from './Components/CountriesTable';
+import { SortData } from './SortFunc';
 
 function App() {
 
@@ -11,6 +13,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('global');
   const [countryInfo, setCountryInfo] = useState({});
+  const [tableData, setTableData] = useState([]);
 
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
@@ -31,6 +34,8 @@ function App() {
             value: country.countryInfo.iso2,
           }));
 
+          const sortedData = SortData(data);
+          setTableData(sortedData);
           setCountries(countries);
 
       })
@@ -99,6 +104,7 @@ function App() {
       <Card className="right_section">
         <CardContent>
           <h2>Live cases from countries</h2>
+          <CountriesTable countries={tableData}/>
           <h2>Wordwide new cases</h2>
         </CardContent>
 
