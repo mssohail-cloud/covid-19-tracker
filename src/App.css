@@ -53,6 +53,22 @@ body {
   margin-top: 1rem;
 }
 
+chartjs-size-monitor{
+  height: 300px;
+}
+
+.app_graph{
+  flex-grow: 1;
+  height: 300px;
+
+}
+
+.app_graphTitle{
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+}
+
 @media (max-width: 770px) {
   .app {
     flex-direction: column;

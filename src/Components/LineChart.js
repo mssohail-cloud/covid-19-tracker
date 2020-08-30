@@ -50,7 +50,7 @@ const options = {
   };
   
 
-function LineChart({casesType}) {
+function LineChart({casesType, ...props}) {
 
     const [Data, setData] = useState({});
 
@@ -90,7 +90,7 @@ function LineChart({casesType}) {
         return chartData;
     }
     return (
-        <div>
+        <div className={props.className}>
         {Data?.length > 0 && (
           <Line
             data={{

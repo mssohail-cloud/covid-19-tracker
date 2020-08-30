@@ -108,18 +108,20 @@ function App() {
 
 
         <div>
-          <h2>Wordwide new {casesType}</h2>
+          <h2 className="app_graphTitle">Wordwide new {casesType}</h2>
 
-          <LineChart casesType={casesType} />
+          <LineChart className="app_graph" casesType={casesType} />
         </div>
 
 
       </div>
 
-      <Card className="right_section">
+     
+
+      <Card>
         <CardContent>
           <div className="app_information">
-            <h2>Live cases from countries</h2>
+            <h3 >Live cases from countries</h3>
             <CountriesTable countries={tableData} />
           </div>
         </CardContent>
