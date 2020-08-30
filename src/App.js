@@ -4,7 +4,6 @@ import InfoBox from './Components/InfoBox';
 import image from './assets/image.png';
 
 import './App.css';
-import Map from './Components/Map';
 import CountriesTable from './Components/CountriesTable';
 import { SortData, PrintStat } from './SortFunc';
 import LineChart from './Components/LineChart';
@@ -75,8 +74,8 @@ function App() {
       <div className="left_section">
         <div className="app_header">
           <img src={image} alt="COVID-19" />
-          </div>
-          <div>
+        </div>
+        <div>
 
           <FormControl className="app_dropdown">
             <Select variant="outlined" value={country} onChange={onCountryChange}>
@@ -87,43 +86,41 @@ function App() {
               ))}
 
 
-              {/* <MenuItem value="Worldwide">WorldWide</MenuItem>
-            <MenuItem value="Option 2">Option 2</MenuItem>
-            <MenuItem value="Option 3">Option 3</MenuItem>  */}
+
             </Select>
           </FormControl>
 
         </div>
 
         <div className="app_states">
-          <InfoBox isRed active={casesType==="cases"} 
-          onClick={(e) => setCasesType('cases')}
-           title="Coronavirus Cases" cases={PrintStat(countryInfo.todayCases)} total={PrintStat(countryInfo.cases)} />
+          <InfoBox isRed active={casesType === "cases"}
+            onClick={(e) => setCasesType('cases')}
+            title="Coronavirus Cases" cases={PrintStat(countryInfo.todayCases)} total={PrintStat(countryInfo.cases)} />
 
-          <InfoBox active={casesType==="recovered"} 
-          onClick={(e) => setCasesType('recovered')}
-           title="Recovered" cases={PrintStat(countryInfo.todayRecovered)} total={PrintStat(countryInfo.recovered)} />
+          <InfoBox active={casesType === "recovered"}
+            onClick={(e) => setCasesType('recovered')}
+            title="Recovered" cases={PrintStat(countryInfo.todayRecovered)} total={PrintStat(countryInfo.recovered)} />
 
-          <InfoBox isRed active={casesType==="deaths"} 
-          onClick={(e) => setCasesType('deaths')}
-          title="Deaths" cases={PrintStat(countryInfo.todayDeaths)} total={PrintStat(countryInfo.deaths)} />
+          <InfoBox isRed active={casesType === "deaths"}
+            onClick={(e) => setCasesType('deaths')}
+            title="Deaths" cases={PrintStat(countryInfo.todayDeaths)} total={PrintStat(countryInfo.deaths)} />
         </div>
 
-       
-       <div>
-            <h2>Wordwide new {casesType}</h2>
 
-        <LineChart casesType={casesType} />
-       </div>
-       
+        <div>
+          <h2>Wordwide new {casesType}</h2>
+
+          <LineChart casesType={casesType} />
+        </div>
+
 
       </div>
 
       <Card className="right_section">
         <CardContent>
           <div className="app_information">
-          <h2>Live cases from countries</h2>
-          <CountriesTable countries={tableData} />
+            <h2>Live cases from countries</h2>
+            <CountriesTable countries={tableData} />
           </div>
         </CardContent>
 
