@@ -61,7 +61,7 @@ function LineChart({casesType}) {
         .then((response) => response.json())
         .then((data) => {
 
-            const chartData = buildChartData(data);
+            let chartData = buildChartData(data, casesType);
             setData(chartData);
 
         });
@@ -72,12 +72,12 @@ function LineChart({casesType}) {
         
     }, [casesType]);
 
-    const buildChartData = (data, casesType='cases') =>{
-        const chartData = [];
+    const buildChartData = (data, casesType) =>{
+        let chartData = [];
         let lastDataPoint;
         for(let date in data.cases) {
             if(lastDataPoint){
-                const newDatapoint = {
+                let newDatapoint = {
                     x: date, 
                     y: data[casesType][date]-lastDataPoint
                 }

@@ -1,3 +1,6 @@
+import numeral from "numeral";
+
+
 export const SortData = (data) => {
     const sortedData = [...data];
 
@@ -10,3 +13,6 @@ export const SortData = (data) => {
     });
     return sortedData;
 }
+
+export const PrintStat = (stat) =>
+  stat ? `+${numeral(stat).format("0.0a")}` : "+0";
